@@ -53,7 +53,7 @@ function Register() {
                             name="email"
                             value={email}
                             onChange={onChange}
-                            placeholder="Enter your password"
+                            placeholder="Enter your email"
                             required
                         />
                     </div>
