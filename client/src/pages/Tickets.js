@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import TicketItem from '../components/TicketItem';
 import { getTickets, reset } from '../features/tickets/ticketSlice';
 
 function Tickets() {
@@ -22,7 +23,14 @@ function Tickets() {
     }
 
     return (
-        <div>Tickets</div>
+        <>
+            <h1>My Tickets</h1>
+            <section>
+                {tickets.map((ticket) => (
+                    <TicketItem key={ticket._id} ticket={ticket} />
+                ))}
+            </section>
+        </>
     );
 }
 
