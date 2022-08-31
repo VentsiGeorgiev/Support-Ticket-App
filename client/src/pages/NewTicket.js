@@ -1,14 +1,39 @@
-import { useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useState, useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
+import { createTicket, reset } from '../features/tickets/ticketSlice';
 
 function NewTicket() {
     const { user } = useSelector((state) => state.auth);
+    const { isLoading, isError, isSuccess, message } = useSelector((state) => state.ticket);
+
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+
     const [product, setProduct] = useState('');
     const [description, setDescription] = useState('');
 
+    useEffect(() => {
+        if (isError) {
+            toast.error(message);
+        }
+        if (isSuccess) {
+            dispatch(reset);
+            navigate('/tickets');
+        }
+
+        dispatch(reset());
+    }, [isError, isSuccess, dispatch, navigate, message]);
+
     const onSubmit = (e) => {
         e.preventDefault();
+        dispatch(createTicket({ product, description }));
     };
+
+    if (isLoading) {
+        return <h3>Loading...</h3>;
+    }
 
     return (
         <>
