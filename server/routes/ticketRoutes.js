@@ -2,6 +2,9 @@ const router = require('express').Router();
 
 const { getTickets, getTicket, createTicket, updateTicket, deleteTicket } = require('../controllers/ticketController');
 const { protect } = require('../middleware/auth');
+const noteRouter = require('./noteRoutes');
+
+router.use('/:ticketId/notes', noteRouter);
 
 router.route('/')
     .get(protect, getTickets)
