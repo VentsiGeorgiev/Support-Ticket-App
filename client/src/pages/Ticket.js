@@ -69,17 +69,19 @@ function Ticket() {
 
     return (
         <section className='ticket'>
-            <h3>Ticket ID: {ticket._id}</h3>
-            <p className={`${ticket.status === 'closed' ? 'status-closed' : 'status-new'}`}>{ticket.status}</p>
-            <h3>Product:</h3>
-            <p>{ticket.product}</p>
-            <h3>Date Submitetted:</h3>
-            <p>{new Date(ticket.createdAt).toLocaleString('en-US')}</p>
-            <h3>Description of the issue</h3>
-            <p>{ticket.description}</p>
+            <div className='ticket-wrapper'>
+                <h3>Ticket ID: {ticket._id}</h3>
+                <p className={`${ticket.status === 'closed' ? 'status-closed' : 'status-new'}`}>{ticket.status}</p>
+                <h3>Product:</h3>
+                <p>{ticket.product}</p>
+                <h3>Date Submitetted:</h3>
+                <p>{new Date(ticket.createdAt).toLocaleString('en-US')}</p>
+                <h3>Description of the issue</h3>
+                <p>{ticket.description}</p>
+            </div>
             <hr />
-            <h3>Notes</h3>
 
+            <h3>Notes</h3>
             {ticket.status !== 'closed' && (
                 <button
                     className='btn btn-secondary'

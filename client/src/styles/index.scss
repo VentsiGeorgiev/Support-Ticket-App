@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap');
 
 $primary: #202C45;
-$secondary: #a4a4a4;
+$secondary: #bdbdbd6c;
 $blue: #003F9A;
 $red: #E81C2E;
 $green: #05ad13;
@@ -70,6 +70,14 @@ a {
     text-align: center;
     max-width: 60%;
     margin: 8px auto;
+    border-radius: 6px;
+}
+
+.link:hover {
+    background-color: $primary;
+}
+.link:hover a {
+    color: $white;
 }
 
 
@@ -147,4 +155,15 @@ a {
     margin-bottom: 8px;
 }
 
+.ticket-wrapper {
+    background-color: $secondary;
+    padding: 10px;
+    border-radius: 8px;
+}
 
+.note {
+    border: 2px solid $secondary;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 8px;
+}
