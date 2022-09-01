@@ -23,14 +23,14 @@ function Tickets() {
     }
 
     return (
-        <>
+        <section className='container'>
             <h1>My Tickets</h1>
             <section>
                 {tickets.map((ticket) => (
                     <TicketItem key={ticket._id} ticket={ticket} />
                 ))}
             </section>
-        </>
+        </section>
     );
 }
 

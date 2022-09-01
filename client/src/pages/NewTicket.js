@@ -36,26 +36,26 @@ function NewTicket() {
     }
 
     return (
-        <>
+        <section className='container'>
             <section>
                 <h1>Create New Ticket</h1>
                 <p>Please fill out the form below</p>
             </section>
 
             <section>
-                <div>
+                <div className='form__input'>
                     <label>Customer Name
                         <input type='text' value={user.name} disabled />
                     </label>
                 </div>
-                <div>
+                <div className='form__input'>
                     <label>Customer Email
                         <input type='text' value={user.email} disabled />
                     </label>
                 </div>
 
                 <form onSubmit={onSubmit}>
-                    <div>
+                    <div className='form__input'>
                         <label htmlFor='product'>Product</label>
                         <select
                             name='product'
@@ -69,7 +69,7 @@ function NewTicket() {
                             <option value="Smart Tech">Smart Tech</option>
                         </select>
                     </div>
-                    <div>
+                    <div className='form__input'>
                         <label htmlFor='description'>Description</label>
                         <textarea
                             name='description'
@@ -83,11 +83,11 @@ function NewTicket() {
                     </div>
 
                     <div>
-                        <button>Submit</button>
+                        <button className='btn btn-primary'>Submit</button>
                     </div>
                 </form>
             </section>
-        </>
+        </section>
     );
 }
 

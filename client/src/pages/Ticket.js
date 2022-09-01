@@ -68,9 +68,9 @@ function Ticket() {
     };
 
     return (
-        <div>
+        <section className='ticket'>
             <h3>Ticket ID: {ticket._id}</h3>
-            <p>{ticket.status}</p>
+            <p className={`${ticket.status === 'closed' ? 'status-closed' : 'status-new'}`}>{ticket.status}</p>
             <h3>Product:</h3>
             <p>{ticket.product}</p>
             <h3>Date Submitetted:</h3>
@@ -82,6 +82,7 @@ function Ticket() {
 
             {ticket.status !== 'closed' && (
                 <button
+                    className='btn btn-secondary'
                     onClick={openModal}
                 >
                     Add Note
@@ -103,7 +104,7 @@ function Ticket() {
                         >
                         </textarea>
                     </div>
-                    <button>Submit</button>
+                    <button className='btn btn-secondary'>Submit</button>
                 </form>
             </Modal>
 
@@ -112,12 +113,12 @@ function Ticket() {
             ))}
             <div>
                 {ticket.status !== 'closed' && (
-                    <button onClick={onTicketClose}>Close Ticket</button>
+                    <button className='btn btn-secondary' onClick={onTicketClose}>Close Ticket</button>
                 )}
             </div>
 
 
-        </div>
+        </section>
     );
 }
 

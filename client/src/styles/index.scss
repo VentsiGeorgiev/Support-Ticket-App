@@ -5,6 +5,7 @@ $primary: #202C45;
 $secondary: #a4a4a4;
 $blue: #003F9A;
 $red: #E81C2E;
+$green: #05ad13;
 $white: #ffffff;
 
 body {
@@ -23,9 +24,28 @@ a {
     padding: 4px 18px;
     border-radius: 6px;
     border: none;
+    cursor: pointer;
 }
 
 .btn-primary {
+    background-color: $primary;
+    color: $white;
+    border: 1px solid $primary;
+}
+
+.btn-primary:hover {
+    border: 1px solid $primary;
+    background-color: $white;
+    color: $primary;
+}
+
+.btn-secondary {
+    background-color: $white;
+    color: $primary;
+    border: 1px solid $primary;
+}
+
+.btn-secondary:hover {
     background-color: $primary;
     color: $white;
 }
@@ -103,5 +123,28 @@ a {
     &__input {
         margin-bottom: 8px;
     }
+    &__input label{
+        display: block;
+    }
 }
+
+// # Ticket
+
+.ticket {
+    border: 1px solid $blue;
+    border-radius: 8px;
+    padding: 10px 16px;
+    margin: 10px 20px;
+}
+
+.status-closed {
+    color: $red;
+    margin-bottom: 8px;
+}
+
+.status-new {
+    color: $green;
+    margin-bottom: 8px;
+}
+
 

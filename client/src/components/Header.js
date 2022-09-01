@@ -26,7 +26,7 @@ function Header() {
                         ? (
                             <>
                                 <li className='header__navigation__link'>
-                                    <button onClick={OnLogout}> <FaSignOutAlt /> Logout</button>
+                                    <button className='btn btn-primary' onClick={OnLogout}> <FaSignOutAlt /> Logout</button>
                                 </li>
                             </>)
                         : (
