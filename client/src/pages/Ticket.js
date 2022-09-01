@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useParams, useNavigate } from 'react-router-dom';
 import Modal from 'react-modal';
 import { getTicket, closeTicket } from '../features/tickets/ticketSlice';
-import { getNotes } from '../features/notes/noteSlice';
+import { getNotes, createNote } from '../features/notes/noteSlice';
 import NoteItem from '../components/NoteItem';
 
 const customStyles = {
@@ -62,7 +62,8 @@ function Ticket() {
     const onNoteSubmit = (e) => {
         e.preventDefault();
 
-        console.log('Submit');
+        dispatch(createNote({ noteText, ticketId }));
+
         closeModal();
     };
 
