@@ -57,14 +57,14 @@ function Register() {
     }
 
     return (
-        <>
-            <section>
+        <section className='container'>
+            <section className='title'>
                 <h1>Register</h1>
                 <p>Please create an account</p>
             </section>
             <section>
                 <form onSubmit={onSubmit}>
-                    <div>
+                    <div className='form__input'>
                         <input
                             type="text"
                             id="name"
@@ -75,7 +75,7 @@ function Register() {
                             required
                         />
                     </div>
-                    <div>
+                    <div className='form__input'>
                         <input
                             type="text"
                             id="email"
@@ -86,7 +86,7 @@ function Register() {
                             required
                         />
                     </div>
-                    <div>
+                    <div className='form__input'>
                         <input
                             type="password"
                             id="password"
@@ -97,7 +97,7 @@ function Register() {
                             required
                         />
                     </div>
-                    <div>
+                    <div className='form__input'>
                         <input
                             type="password"
                             id="repass"
@@ -109,11 +109,11 @@ function Register() {
                         />
                     </div>
 
-                    <button>Submit</button>
+                    <button className='btn btn-primary'>Submit</button>
 
                 </form>
             </section>
-        </>
+        </section>
     );
 }
 

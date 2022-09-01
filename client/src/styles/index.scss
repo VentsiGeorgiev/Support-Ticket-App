@@ -1,0 +1,107 @@
+@import './reset.scss';
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap');
+
+$primary: #202C45;
+$secondary: #a4a4a4;
+$blue: #003F9A;
+$red: #E81C2E;
+$white: #ffffff;
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    width: 100%;
+    max-width: 1140px;
+    min-width: 300px;
+    margin: 0 auto;
+}
+
+a {
+    color: $primary;
+}
+
+.btn {
+    padding: 4px 18px;
+    border-radius: 6px;
+    border: none;
+}
+
+.btn-primary {
+    background-color: $primary;
+    color: $white;
+}
+
+
+.container {
+    width: 100%;
+    max-width: 1140px;
+    min-width: 300px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.icon {
+    color: #a4a4a4;
+    margin-right: 4px;
+}
+
+.link {
+    border: 1px solid $primary;
+    padding: 6px 12px;
+    text-align: center;
+    max-width: 60%;
+    margin: 8px auto;
+}
+
+
+// # Header
+.logo {
+    color: $blue;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 10px;
+
+    &__navigation {
+        display: flex;
+        gap: 10px;
+
+        &__link {
+            color: $primary;
+            font-size: 1rem;
+        }
+
+    }
+
+}
+
+// # Home
+.hero {
+ text-align: center;
+
+ &__title {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+ }
+
+  p {
+    margin-bottom: 18px;
+ }
+}
+
+// # Login / Register
+
+.title {
+    h1,p  {
+        margin-bottom: 8px;
+    }
+}
+
+.form {
+    &__input {
+        margin-bottom: 8px;
+    }
+}
+

@@ -15,37 +15,40 @@ function Header() {
     };
 
     return (
-        <header>
-            <div className="logo"></div>
-            <Link to="/">Customer Support</Link>
-            <div className="navigation">
-                <ul>
+        <section className='container'>
+            <header className='header'>
+                <div>
+                    <Link className='logo' to="/">Customer Support</Link>
+                </div>
+
+                <ul className="header__navigation">
                     {user
                         ? (
                             <>
-                                <li>
+                                <li className='header__navigation__link'>
                                     <button onClick={OnLogout}> <FaSignOutAlt /> Logout</button>
                                 </li>
                             </>)
                         : (
                             <>
                                 <li>
-                                    <Link to="/login">
-                                        <FaSignInAlt />
+                                    <Link className='header__navigation__link' to="/login">
+                                        <FaSignInAlt className='icon' />
                                         Login
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link to="/register">
-                                        <FaUser />
+                                    <Link className='header__navigation__link' to="/register">
+                                        <FaUser className='icon' />
                                         Register
                                     </Link>
                                 </li>
                             </>)}
 
                 </ul>
-            </div>
-        </header>
+
+            </header>
+        </section >
     );
 }
 

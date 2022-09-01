@@ -52,14 +52,14 @@ function Login() {
     }
 
     return (
-        <>
-            <section>
+        <section className='container'>
+            <section className='title'>
                 <h1>Login</h1>
                 <p>Please log in to get support</p>
             </section>
-            <section>
+            <section className='form'>
                 <form onSubmit={onSubmit}>
-                    <div>
+                    <div className='form__input'>
                         <input
                             type="text"
                             id="email"
@@ -70,7 +70,7 @@ function Login() {
                             required
                         />
                     </div>
-                    <div>
+                    <div className='form__input'>
                         <input
                             type="password"
                             id="password"
@@ -81,11 +81,11 @@ function Login() {
                             required
                         />
                     </div>
-                    <button>Submit</button>
+                    <button className='btn btn-primary'>Submit</button>
 
                 </form>
             </section>
-        </>
+        </section>
     );
 }
 
