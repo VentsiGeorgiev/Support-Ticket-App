@@ -1,12 +1,15 @@
 import { useEffect } from 'react';
+import { toast } from 'react-toastify';
 import { useSelector, useDispatch } from 'react-redux';
 import { useParams, useNavigate } from 'react-router-dom';
-import { getTicket, reset, closeTicket } from '../features/tickets/ticketSlice';
-import { toast } from 'react-toastify';
+import { getTicket, closeTicket } from '../features/tickets/ticketSlice';
+import { getNotes } from '../features/notes/noteSlice';
+import NoteItem from '../components/NoteItem';
 
 
 function Ticket() {
     const { ticket, isLoading, isSuccess, isError, message } = useSelector((state) => state.tickets);
+    const { notes, isLoading: notesIsLoading } = useSelector((state) => state.notes);
 
     const dispatch = useDispatch();
     const navigate = useNavigate();
@@ -17,10 +20,11 @@ function Ticket() {
             toast.error(message);
         }
         dispatch(getTicket(ticketId));
+        dispatch(getNotes(ticketId));
         // eslint-disable-next-line
     }, [isError, message, ticketId]);
 
-    if (isLoading) {
+    if (isLoading || notesIsLoading) {
         return <h3>Loading...</h3>;
     }
 
@@ -44,11 +48,17 @@ function Ticket() {
             <p>{new Date(ticket.createdAt).toLocaleString('en-US')}</p>
             <h3>Description of the issue</h3>
             <p>{ticket.description}</p>
+            <hr />
+            <h3>Notes</h3>
+            {notes.map((note) => (
+                <NoteItem key={note._id} note={note} />
+            ))}
             <div>
                 {ticket.status !== 'closed' && (
                     <button onClick={onTicketClose}>Close Ticket</button>
                 )}
             </div>
+
 
         </div>
     );
